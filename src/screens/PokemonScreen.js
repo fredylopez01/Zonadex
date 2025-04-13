@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getPokemonDetailsApi } from "../api/Pokemon";
 import HeaderPokemon from "../components/HeaderPokemon";
 import TypesPokemon from "../components/TypesPokemon";
+import StatsPokemon from "../components/StatsPokemon";
 
 export default function PokemonScreen(props) {
   const {
@@ -33,6 +34,7 @@ export default function PokemonScreen(props) {
         image={pokemon.sprites.other["official-artwork"].front_default}
       />
       <TypesPokemon types={pokemon.types} />
+      <StatsPokemon stats={pokemon.stats} type={pokemon.types[0].type.name} />
     </ScrollView>
   );
 }

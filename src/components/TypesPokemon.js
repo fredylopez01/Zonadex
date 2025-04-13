@@ -6,7 +6,6 @@ import { capitalizeFirstLetter } from "../utils/TextUtils";
 export default function TypesPokemon(props) {
   const { types } = props;
   const color = (type) => getColorByPokemonType(type);
-  console.log(types);
   return (
     <View style={styles.content}>
       {types.map((item) => (
@@ -25,7 +24,7 @@ export default function TypesPokemon(props) {
 
 const styles = StyleSheet.create({
   content: {
-    marginTop: 20,
+    marginTop: 10,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",

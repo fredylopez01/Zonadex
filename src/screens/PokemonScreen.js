@@ -2,9 +2,9 @@ import { ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { getPokemonDetailsApi } from "../api/Pokemon";
-import HeaderPokemon from "../components/HeaderPokemon";
-import TypesPokemon from "../components/TypesPokemon";
-import StatsPokemon from "../components/StatsPokemon";
+import HeaderPokemon from "../components/pokemon/HeaderPokemon";
+import TypesPokemon from "../components/pokemon/TypesPokemon";
+import StatsPokemon from "../components/pokemon/StatsPokemon";
 
 export default function PokemonScreen(props) {
   const {

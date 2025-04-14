@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { capitalizeFirstLetter } from "../utils/TextUtils";
-import getColorByType from "../utils/ColorUtils";
+import { capitalizeFirstLetter } from "../../utils/TextUtils";
+import getColorByType from "../../utils/ColorUtils";
 
 export default function Stats(props) {
   const { stats, type } = props;

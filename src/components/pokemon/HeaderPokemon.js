@@ -1,7 +1,7 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
-import { capitalizeFirstLetter } from "../utils/TextUtils";
-import getColorByType from "../utils/ColorUtils";
+import { capitalizeFirstLetter } from "../../utils/TextUtils";
+import getColorByType from "../../utils/ColorUtils";
 
 export default function HeaderPokemon(props) {
   const { id, name, type, order, image } = props;

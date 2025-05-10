@@ -9,9 +9,13 @@ import React, { use, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { user, userDetails } from "../../utils/UserDB";
+import useAuth from "../../hooks/useAuth";
 
 export default function LoginForm() {
   const [error, setError] = useState("");
+
+  const { login } = useAuth();
+
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: Yup.object(validationSchema()),
@@ -23,8 +27,7 @@ export default function LoginForm() {
       if (username !== user.username || password !== user.password) {
         setError("El usuario o la contraseña no son correctos");
       } else {
-        console.log("Formulario enviado...");
-        console.log(formValue);
+        login(userDetails);
       }
     },
   });
@@ -116,7 +119,14 @@ const styles = StyleSheet.create({
     width: "80%",
     borderRadius: 20,
     backgroundColor: "#fff",
-    boxShadow: "5 5 20",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 5,
+      height: 5,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 20,
+    elevation: 20,
   },
   input: {
     height: 40,

@@ -36,9 +36,11 @@ export default function LoginForm() {
     <View style={styles.center}>
       <View style={styles.bg} />
       <View style={styles.header}>
-        <Text style={styles.title}>Iniciar sesión</Text>
+        <Text style={styles.title}>Holaa!</Text>
+        <Text style={styles.titleShort}>Bienvenido a la Pokedex!</Text>
       </View>
       <View style={styles.form}>
+        <Text style={styles.titleForm}>Iniciar sesión</Text>
         <TextInput
           placeholder="Nombre de usuario"
           style={styles.input}
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
   },
   bg: {
     width: "100%",
-    height: 200,
+    height: 250,
     position: "absolute",
     borderBottomEndRadius: 300,
     borderBottomLeftRadius: 300,
@@ -109,14 +111,24 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#fff",
   },
+  titleShort: {
+    fontSize: 15,
+    color: "#fff",
+  },
+  titleForm: {
+    fontSize: 27,
+    fontWeight: "bold",
+    color: "black",
+    marginBottom: 35,
+  },
   form: {
-    width: "100%",
     alignContent: "center",
     alignItems: "center",
     marginTop: 65,
     paddingHorizontal: 20,
-    paddingVertical: 70,
-    width: "80%",
+    paddingTop: 65,
+    paddingBottom: 70,
+    width: "85%",
     borderRadius: 20,
     backgroundColor: "#fff",
     shadowColor: "#000",

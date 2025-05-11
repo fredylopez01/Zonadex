@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { includes, pull } from "lodash";
+import { pull } from "lodash";
 import { FAVORITE_STORAGE } from "../utils/Constants";
 
 export async function getPokemonsFavoriteApi() {

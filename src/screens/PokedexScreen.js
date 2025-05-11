@@ -50,6 +50,5 @@ export default function Pokedex() {
 const styles = StyleSheet.create({
   container: {
     paddingTop: Platform.OS === "android" ? 10 : 0,
-    paddingBottom: Platform.OS === "android" ? 20 : 0,
   },
 });

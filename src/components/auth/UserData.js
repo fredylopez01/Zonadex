@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
+import { useFocusEffect } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Button,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import useAuth from "../../hooks/useAuth";
+import { getPokemonsFavoriteApi } from "../../api/Favorite";
 
 export default function UserData() {
   const { auth, logout } = useAuth();
+  const [total, setTotal] = useState(125);
+
+  useFocusEffect(
+    useCallback(() => {
+      (async () => {
+        try {
+          const likedPokemons = await getPokemonsFavoriteApi();
+          setTotal(likedPokemons.length);
+        } catch (error) {
+          setTotal(0);
+        }
+      })();
+    }, [])
+  );
 
   return (
     <View style={styles.content}>
@@ -31,7 +40,7 @@ export default function UserData() {
         <ItemMenu title="Username" text={auth.username} />
         <ItemMenu title="Nombre" text={`${auth.firstName} ${auth.lastName}`} />
         <ItemMenu title="Email" text={auth.email} />
-        <ItemMenu title="Total Favoritos" text={`0 pokemons`} />
+        <ItemMenu title="Total Favoritos" text={`${total} pokemons`} />
       </View>
 
       <TouchableOpacity onPress={logout} style={styles.buttonLogout}>

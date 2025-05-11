@@ -18,18 +18,18 @@ export default function PokemonScreen(props) {
 
   useEffect(() => {
     navigation.setOptions({
-      headerRight: auth ? <Favorite id={pokemon?.id} /> : undefined,
+      headerRight: () => (auth ? <Favorite id={pokemon?.id} /> : undefined),
       headerLeft: () => (
         <Icon
           name="arrow-left"
           color="#fff"
-          size={22}
+          size={25}
           style={{ marginLeft: 20 }}
           onPress={navigation.goBack}
         />
       ),
     });
-  }, [navigation, params]);
+  }, [navigation, params, pokemon]);
 
   useEffect(() => {
     (async () => {

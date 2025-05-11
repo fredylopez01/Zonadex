@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 15,
     gap: 10,
-    marginTop: 55,
+    marginTop: 60,
   },
   title: {
     display: "flex",

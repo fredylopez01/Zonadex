@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "react-native-vector-icons/FontAwesome5";
 import {
   StyleSheet,
   View,
@@ -23,7 +24,9 @@ export default function UserData() {
           Bienvenido, {`${auth.firstName} ${auth.lastName}`}
         </Text>
       </View>
-      <Image source={require("../../assets/user.png")} style={styles.image} />
+      <View style={styles.image}>
+        <Icon name="user-circle" color="#fff" size={89} />
+      </View>
       <View style={styles.dataContent}>
         <ItemMenu title="Username" text={auth.username} />
         <ItemMenu title="Nombre" text={`${auth.firstName} ${auth.lastName}`} />
@@ -32,7 +35,10 @@ export default function UserData() {
       </View>
 
       <TouchableOpacity onPress={logout} style={styles.buttonLogout}>
-        <Text style={styles.buttonText}>Desconectarse</Text>
+        <View style={styles.buttonCenter}>
+          <Text style={styles.buttonText}>Desconectarse</Text>
+          <Icon name="sign-out-alt" color="#fff" size={17} />
+        </View>
       </TouchableOpacity>
     </View>
   );
@@ -85,8 +91,8 @@ const styles = StyleSheet.create({
     color: "white",
   },
   image: {
-    width: 90,
-    height: 90,
+    width: 93,
+    height: 93,
     position: "absolute",
     top: 170,
     left: "50%",
@@ -94,6 +100,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#20c997",
     borderRadius: 50,
     zIndex: 10,
+    alignContent: "center",
+    alignItems: "center",
   },
   dataContent: {
     width: "90%",
@@ -136,6 +144,12 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "#2196F3",
     color: "#fff",
+    alignItems: "center",
+    alignContent: "center",
+  },
+  buttonCenter: {
+    flexDirection: "row",
+    gap: 15,
     alignItems: "center",
     alignContent: "center",
   },

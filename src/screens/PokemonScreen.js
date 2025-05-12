@@ -18,7 +18,8 @@ export default function PokemonScreen(props) {
 
   useEffect(() => {
     navigation.setOptions({
-      headerRight: () => (auth ? <Favorite id={pokemon?.id} /> : undefined),
+      headerRight: () =>
+        auth ? <Favorite id={pokemon?.id} margin={true} /> : undefined,
       headerLeft: () => (
         <Icon
           name="arrow-left"

@@ -26,6 +26,8 @@ export default function Pokedex() {
           name: pokemonDetails.name,
           type: pokemonDetails.types[0].type.name,
           order: pokemonDetails.order,
+          height: pokemonDetails.height,
+          weight: pokemonDetails.weight,
           image: pokemonDetails.sprites.other["official-artwork"].front_default,
         });
       }

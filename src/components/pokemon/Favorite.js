@@ -7,7 +7,7 @@ import {
 } from "../../api/Favorite";
 
 export default function Favorite(props) {
-  const { id } = props;
+  const { id, margin } = props;
   const [isFavorite, setIsFavorite] = useState(undefined);
   const [reload, setReload] = useState(false);
 
@@ -47,10 +47,10 @@ export default function Favorite(props) {
   return (
     <Icon
       name="heart"
-      color="#fff"
+      color={margin ? "#fff" : "#f00"}
       size={25}
       onPress={isFavorite ? removeFavorite : addFavorite}
-      style={{ marginRight: 20 }}
+      style={margin ? { paddingHorizontal: 20 } : { paddingHorizontal: 0 }}
       solid={isFavorite ? true : false}
     />
   );

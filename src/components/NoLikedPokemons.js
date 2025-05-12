@@ -1,36 +1,22 @@
-import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
-export default function NoLogged() {
-  const navigation = useNavigation();
+export default function NoLikedPokemons() {
   return (
     <View style={styles.center}>
       <View style={styles.bg} />
       <View style={styles.header}>
-        <Text style={styles.title}>Ups!</Text>
-        <Text style={styles.titleShort}>
-          Parece que no haz iniciado sesión!
-        </Text>
+        <Text style={styles.title}>Sin favoritos!</Text>
       </View>
       <View style={styles.message}>
         <Image
-          source={require("../../assets/pikachu.png")}
+          source={require("../assets/balbasaur.png")}
           style={styles.image}
         />
         <Text style={styles.messageText}>
-          Para poder acceder a esta sección es necesario que inicies sesión
+          Puede agregar pokemones a sus favoritos pulsando el corazón
         </Text>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Account")}
-          style={styles.button}
-        >
-          <View style={styles.buttonCenter}>
-            <Text style={styles.buttonText}>Iniciar sesión</Text>
-            <Icon name="sign-in-alt" color="#fff" size={17} />
-          </View>
-        </TouchableOpacity>
       </View>
     </View>
   );
@@ -48,7 +34,7 @@ const styles = StyleSheet.create({
     borderBottomEndRadius: 300,
     borderBottomLeftRadius: 300,
     transform: [{ scaleX: 1.5 }],
-    backgroundColor: "#dc3545",
+    backgroundColor: "#0dcaf0",
   },
   header: {
     alignContent: "center",
@@ -70,7 +56,7 @@ const styles = StyleSheet.create({
   message: {
     alignContent: "center",
     alignItems: "center",
-    marginTop: 65,
+    marginTop: 75,
     paddingHorizontal: 20,
     paddingTop: 300,
     paddingBottom: 70,
@@ -87,11 +73,11 @@ const styles = StyleSheet.create({
     elevation: 20,
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     position: "absolute",
     top: 130,
-    left: "43%",
+    left: "30%",
     transform: [{ translate: [-50, -50] }],
     zIndex: 10,
     alignContent: "center",
